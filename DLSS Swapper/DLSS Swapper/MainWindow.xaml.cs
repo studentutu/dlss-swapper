@@ -413,9 +413,9 @@ Migration will not be attempted again on next launch.",
             }
 
             // If there are any dll files in this folder we should migrate.
-            var dllFilesFound = Directory.GetFiles(oldDirectory, "*.dll", SearchOption.AllDirectories).Length;
-
-            if (dllFilesFound > 0)
+            //var dllFilesFound = Directory.GetFiles(oldDirectory, "*.dll", SearchOption.AllDirectories).Length;
+            var dllFilesFound = DirectoryExtensions.BetterGetFiles(oldDirectory, "*.dll").Any();
+            if (dllFilesFound)
             {
                 return true;
             }
@@ -442,12 +442,13 @@ Migration will not be attempted again on next launch.",
             }
 
             // If there are any dll or zip files in this folder we should migrate.
-            var dllFiles = Directory.GetFiles(oldDirectory, "*.dll", SearchOption.AllDirectories);
+            //var dllFiles = Directory.GetFiles(oldDirectory, "*.dll", SearchOption.AllDirectories);
+            var dllFiles = DirectoryExtensions.BetterGetFiles(oldDirectory, "*.dll");
 
             // Show progress ring as we process files.
             LoadingProgressRing.IsIndeterminate = false;
             LoadingProgressRing.Value = 0;
-            LoadingProgressRing.Maximum = dllFiles.Length + 1;
+            LoadingProgressRing.Maximum = dllFiles.Count() + 1;
 
             // Prep the output folders.
             var storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

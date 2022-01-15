@@ -1,4 +1,5 @@
-﻿using DLSS_Swapper.Interfaces;
+﻿using DLSS_Swapper.Extensions;
+using DLSS_Swapper.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -88,7 +89,8 @@ namespace DLSS_Swapper.Data
                 {
                     if (Directory.Exists(libraryFolder))
                     {
-                        var appManifests = Directory.GetFiles(libraryFolder, "appmanifest_*.acf");
+                        //var appManifests = Directory.GetFiles(libraryFolder, "appmanifest_*.acf");
+                        var appManifests = DirectoryExtensions.BetterGetFiles(libraryFolder, "appmanifest_*.acf");
                         foreach (var appManifest in appManifests)
                         {
                             var game = GetGameFromAppManifest(appManifest);
