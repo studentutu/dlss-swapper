@@ -50,6 +50,7 @@ public class LanguageManager
             "en-US",
             "es-ES",
             "fr-FR",
+            "it-IT",
             "pl-PL",
             "pt-BR",
             "ru-RU",
@@ -73,11 +74,10 @@ public class LanguageManager
             "en-AU" => "English (Australia)",
             "en-GB" => "English (United Kingdom)",
             "en-US" => "English (United States)",
-            "fr-FR" => "Français (France)", // French (France)
-            "pl-PL" => "Polski", // Polish
             "es-ES" => "Español", // Spanish
-            "fr-FR" => "French (France)", // French (France)
-            "pl-PL" => "Polish",
+            "fr-FR" => "Français (France)", // French (France)
+            "it-IT" => "Italiano (Italia)", // Italian (Italy)
+            "pl-PL" => "Polski", // Polish
             "pt-BR" => "Português BR",
             "ru-RU" => "Русский", // Russian
             "tr-TR" => "Türkçe", // Turkish
